@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Gallery</title>
+    <style>
+        /* Add some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .movie {
+            width: 22%; /* Adjust the width based on your preference */
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .movie img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+            border-radius: 8px;
+        }
+
+        .movie:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .movie-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .add-to-theatre-button:hover {
+            background-color: rgb(14, 117, 219); /* Darker green on hover */
+        }
+
+    
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>Movie Gallery</h1>
+
+    <div class="movie-container">
+        <!-- Movie 1 -->
+        <div class="movie">
+            <a href="theatrepage.html">
+                <img src="RRR.jpg" alt="Movie 1">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 1</h3>
+                <p>Rating: 4.5</p>
+                <p>Duration: 120 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 2 -->
+        <div class="movie">
+            <a href="theatrepage.html">
+                <img src="LEO.jpg" alt="Movie 2">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 2</h3>
+                <p>Rating: 3.8</p>
+                <p>Duration: 110 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 3 -->
+        <div class="movie">
+            <a href="theatrepage2.html">
+                <img src="pushpa2.jpg" alt="Movie 3">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 3</h3>
+                <p>Rating: 4.2</p>
+                <p>Duration: 115 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 4 -->
+        <div class="movie">
+            <a href="theatrepage.html">
+                <img src="vikram2.jpg" alt="Movie 4">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 4</h3>
+                <p>Rating: 4.0</p>
+                <p>Duration: 105 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 5 -->
+        <div class="movie">
+            <a href="theatrepage.html">
+                <img src="MAD.jpg" alt="Movie 5">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 5</h3>
+                <p>Rating: 4.8</p>
+                <p>Duration: 130 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 6 -->
+        <div class="movie">
+            <a href="theatrepage2.html">
+                <img src="jailer.cms" alt="Movie 6">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 6</h3>
+                <p>Rating: 3.5</p>
+                <p>Duration: 95 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 7 -->
+        <div class="movie">
+            <a href="theatrepage.html">
+                <img src="kgf2.jpg" alt="Movie 7">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 7</h3>
+                <p>Rating: 4.5</p>
+                <p>Duration: 120 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+            </div>
+        </div>
+
+        <!-- Movie 8 -->
+        <div class="movie">
+            <a href="theatrepage2.html">
+                <img src="DON.jpg" alt="Movie 8">
+            </a>
+            <div class="movie-info">
+                <h3>Movie 8</h3>
+                <p>Rating: 3.8</p>
+                <p>Duration: 110 minutes</p>
+                <button class="add-to-theatre-button">Add to Theatre</button>
+                
+            </div>
+        </div>
+    </div>
+</body>

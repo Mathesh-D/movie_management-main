@@ -1,0 +1,92 @@
+user_table - user_name, password, address, phone
+movie - movie_name, duration, rating
+theatre - theatre_name, no_of_seats
+movieTheatre - movie_name, theatre_name
+reservation - reservation_id, user_name, theatre_name, movie_name
+
+
+CREATE TABLE user_table (
+    user_name VARCHAR2(50) PRIMARY KEY,
+    password VARCHAR2(50) NOT NULL,
+    address VARCHAR2(100) NOT NULL,
+    phone VARCHAR2(15) NOT NULL
+);
+
+
+CREATE TABLE movie (
+    movie_name VARCHAR2(100) PRIMARY KEY,
+    duration NUMBER NOT NULL,
+    rating NUMBER
+);
+
+CREATE TABLE theatre (
+    theatre_name VARCHAR2(50) PRIMARY KEY,
+    no_of_seats NUMBER NOT NULL,
+    address VARCHAR2(100) NOT NULL,
+    phone VARCHAR2(15) NOT NULL,
+    password VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE movieTheatre (
+    movie_name VARCHAR2(100) REFERENCES movie(movie_name),
+    theatre_name VARCHAR2(50) REFERENCES theatre(theatre_name),
+    PRIMARY KEY (movie_name, theatre_name)
+);
+
+CREATE TABLE reservation (
+    reservation_id NUMBER PRIMARY KEY,
+    user_name VARCHAR2(50) REFERENCES user_table(user_name),
+    theatre_name VARCHAR2(50) REFERENCES theatre(theatre_name),
+    movie_name VARCHAR2(100) REFERENCES movie(movie_name)
+);
+
+-- Insert data into movie
+INSERT INTO movie (movie_name, duration, rating) VALUES ('RRR', 120, 4.5);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('LEO', 110, 3.8);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('pushpa2', 115, 4.2);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('vikram2', 105, 4.0);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('MAD', 130, 4.8);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('jailer', 95, 3.5);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('kgf2', 120, 4.5);
+INSERT INTO movie (movie_name, duration, rating) VALUES ('DON', 110, 3.8);
+
+-- Insert data into theatre
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('City Cinemas', 150, '123 Main Street, Cityville', '555-1234', 'citypassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Star Theatres', 200, '456 Oak Avenue, Townburg', '555-5678', 'starpassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Mega Cinemas', 180, '789 Pine Lane, Villagetown', '555-9012', 'megapassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Sunset Cinemas', 160, '101 Elm Street, Suburbia', '555-3456', 'sunsetpassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Golden Theatres', 220, '202 Cedar Road, Hamletville', '555-7890', 'goldenpassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Silver Screens', 190, '303 Birch Boulevard, Countryside', '555-2345', 'silverpassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Prestige Cinemas', 170, '404 Maple Court, Farmland', '555-6789', 'prestigepassword');
+INSERT INTO theatre (theatre_name, no_of_seats, address, phone, password) VALUES ('Royal Theatres', 210, '505 Sycamore Street, Outskirts', '555-0123', 'royalpassword');
+
+-- Insert data into movieTheatre
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('RRR', 'Mega Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('RRR', 'Sunset Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('RRR', 'Golden Theatres');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('LEO', 'Golden Theatres');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('LEO', 'Silver Screens');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('pushpa2', 'Prestige Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('pushpa2', 'Royal Theatres');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('pushpa2', 'Mega Cinemas');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('vikram2', 'City Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('vikram2', 'Mega Cinemas');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('MAD', 'Star Theatres');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('MAD', 'Sunset Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('MAD', 'Royal Theatres');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('jailer', 'Golden Theatres');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('jailer', 'Silver Screens');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('jailer', 'City Cinemas');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('kgf2', 'Prestige Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('kgf2', 'Royal Theatres');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('kgf2', 'Star Theatres');
+
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('DON', 'City Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('DON', 'Mega Cinemas');
+INSERT INTO movieTheatre (movie_name, theatre_name) VALUES ('DON', 'Golden Theatres');

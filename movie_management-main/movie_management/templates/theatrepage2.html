@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Available Theaters</title>
+    <style>
+        /* Add some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .theater-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .theater {
+            width: 22%; /* Adjust the width based on your preference */
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .theater img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+            border-radius: 8px;
+        }
+
+        .theater:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .theater-info {
+            position: relative;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-sizing: border-box; /* Include padding and border in the box's total width and height */
+            text-align: left;
+            margin-top: -40px; /* Adjust this value based on your preference */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Theater Page</h1>
+
+    <div class="theater-container">
+        <!-- Theater 1 -->
+        <div class="theater">
+            <a href="theater1.html">
+                <img src="imax.png" alt="Theater 1">
+                <div class="theater-info">
+                    <h3>Theater 1</h3>
+                    <p>Rating: 4.2</p>
+                    <p>Duration: Open all day</p>
+                    <p>Address: 123 Main St</p>
+                    <p>City: Example City</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Theater 2 -->
+        <div class="theater">
+            <a href="multiplex.gif">
+                <img src="multiplex.gif" alt="Theater 2">
+                <div class="theater-info">
+                    <h3>Theater 2</h3>
+                    <p>Rating: 4.5</p>
+                    <p>Duration: Open all day</p>
+                    <p>Address: 456 Broadway</p>
+                    <p>City: Another City</p>
+                </div>
+            </a>
+        </div>
